@@ -1,12 +1,13 @@
-class Solution(object):
-    def judgeSquareSum(self, c):
-        i,j=0, int(sqrt(c))
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        i=0
+        j=int(c**0.5)
         while i<=j:
-            if i**2 + j**2 == c:
+            if i*i +j*j ==c:
                 return True
-            elif(i**2 +j**2 >c):
-                j-=1
-            else:
+            elif(i*i +j*j <c):
                 i+=1
+            else:
+                j-=1
         return False
         
